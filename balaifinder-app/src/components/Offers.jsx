@@ -23,7 +23,7 @@ function Offers(){
                             </p>
                             <div className="mt-6 flex items-center">
                                 <div className="flex-shrink-0">
-                                    <button className="px-4 py-2 bg-sky-700 rounded-lg text-white hover:bg-sky-500">View More</button>
+                                    <button className="px-5 py-3 bg-sky-700 rounded-lg text-white hover:bg-sky-500">View More</button>
                                 </div>
                             </div>
                         </div>
@@ -41,7 +41,7 @@ function Offers(){
                             </p>
                             <div className="mt-6 flex items-center">
                                 <div className="flex-shrink-0">
-                                    <button className="px-4 py-2 bg-sky-700 rounded-lg text-white hover:bg-sky-500">View More</button>
+                                    <button className="px-5 py-3 bg-sky-700 rounded-lg text-white hover:bg-sky-500">View More</button>
                                 </div>
                             </div>
                         </div>
@@ -59,7 +59,7 @@ function Offers(){
                             </p>
                             <div className="mt-6 flex items-center">
                                 <div className="flex-shrink-0">
-                                    <button className="px-4 py-2 bg-sky-700 rounded-lg text-white hover:bg-sky-500">View More</button>
+                                    <button className="px-5 py-3 bg-sky-700 rounded-lg text-white hover:bg-sky-500">View More</button>
                                 </div>
                             </div>
                         </div>
