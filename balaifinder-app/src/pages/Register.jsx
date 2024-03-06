@@ -58,7 +58,7 @@ export default function Register(){
         setShowPassword(!showPassword)
     }
     return(
-        <div className="py-16 bg-gray-200">
+        <div className="py-16 bg-gray-200 h-screen justify-center">
             <div className="flex bg-white rounded-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl shadow-xl shadow-sky-600 relative">
                 <Link to="/">
                     <div className="absolute top-0 right-0 m-4 cursor-pointer">

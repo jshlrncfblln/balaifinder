@@ -3,7 +3,7 @@ import '../index.css'
 import { useState } from 'react'
 export default function Navbar(){
     return(
-        <div className="flex bg-white shadow-xl items-center justify-between gap-8 p-3 w-full">
+        <div className="flex bg-white shadow items-center justify-between gap-8 p-3 w-full">
             <div className='flex items-center'>
                 <img src="./src/assets/BalaiFinder-Logo-30x30.png" alt="" height={50} width={50} />
                 <Link to="/" className="font-bold text-3xl">BalaiFinder</Link>
@@ -14,7 +14,7 @@ export default function Navbar(){
                     <span class="absolute -bottom-1 left-0 w-0 transition-all h-1 bg-sky-600"></span>
                 </CustomLink>
 
-                <CustomLink to="/About" className="underline-hover relative p-2 font-semibold">
+                <CustomLink to="/about" className="underline-hover relative p-2 font-semibold">
                     About Us
                     <span class="absolute -bottom-1 left-0 w-0 transition-all h-1 bg-sky-600"></span>
                 </CustomLink>

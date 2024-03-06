@@ -5,27 +5,27 @@ function Footer(){
                 <nav class="flex flex-wrap justify-center -mx-5 -my-2">
                     <div class="px-5 py-2">
                         <a href="#" class="text-base leading-6 text-gray-100 hover:text-sky-600">
+                            Home
+                        </a>
+                    </div>
+                    <div class="px-5 py-2">
+                        <a href="#" class="text-base leading-6 text-gray-100 hover:text-sky-600">
                             About
                         </a>
                     </div>
                     <div class="px-5 py-2">
                         <a href="#" class="text-base leading-6 text-gray-100 hover:text-sky-600">
-                            Blog
+                            Properties
                         </a>
                     </div>
                     <div class="px-5 py-2">
                         <a href="#" class="text-base leading-6 text-gray-100 hover:text-sky-600">
-                            Team
+                            Match
                         </a>
                     </div>
                     <div class="px-5 py-2">
                         <a href="#" class="text-base leading-6 text-gray-100 hover:text-sky-600">
-                            Pricing
-                        </a>
-                    </div>
-                    <div class="px-5 py-2">
-                        <a href="#" class="text-base leading-6 text-gray-100 hover:text-sky-600">
-                            Contact
+                            Login
                         </a>
                     </div>
                     <div class="px-5 py-2">
