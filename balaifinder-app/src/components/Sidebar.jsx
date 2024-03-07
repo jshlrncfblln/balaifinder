@@ -9,7 +9,8 @@ export default function Sidebar() {
     const [isDropdownVisible, setIsDropdownVisible] = useState(false)  
     const toggleDropdown = () => {
       setIsDropdownVisible(!isDropdownVisible)
-    };
+    }
+
   
 
   return (
@@ -19,7 +20,7 @@ export default function Sidebar() {
       </div>
       <hr />
       <ul className="mt-5 text-black font-semibold items-center justify-center">
-        <li className="mb-2 rounded hover:shadow hover:bg-sky-100 py-2">
+        <li className="mb-2 rounded hover:shadow active:bg-sky-100 hover:bg-sky-100 py-2">
           <a href="" className="px-3">
             <RiDashboardFill className="inline-block size-6 mr-2 -mt-2" />
             Dashboard
