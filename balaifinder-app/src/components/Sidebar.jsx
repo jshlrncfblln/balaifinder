@@ -5,6 +5,8 @@ import { FaClipboardList } from "react-icons/fa"
 import { IoMdSettings } from "react-icons/io"
 import { IoMdArrowDropdown } from "react-icons/io"
 import React, { useState, useRef, useEffect } from 'react'
+
+
 const Sidebar = ({sidebarToggle}) => {
     const [isDropdownVisible, setIsDropdownVisible] = useState(false)  
     const toggleDropdown = () => {
@@ -14,19 +16,19 @@ const Sidebar = ({sidebarToggle}) => {
   
 
   return (
-    <div className={`transition-all duration-300 transform ${sidebarToggle ? "-translate-x-full" : "translate-x-0"} w-64 bg-whitesmoke fixed h-full px-4 py-2 shadow sm:text-sm`}>
+    <div className={`transition-all duration-300 transform ${sidebarToggle ? "-translate-x-full" : "translate-x-0"} w-64 bg-sky-500 fixed h-full px-4 py-2 shadow sm:text-sm`}>
       <div className="my-2 mb-4">
-        <h1 className="text-2xl text-black font-bold">Realtor Dashboard</h1>
+        <h1 className="text-2xl text-white font-bold text-center">BalaiFinder</h1>
       </div>
-      <hr />
-      <ul className="mt-5 text-black font-base items-center justify-center">
-        <li className="mb-2 rounded hover:shadow active:bg-sky-100 hover:bg-sky-100 py-2">
+      <hr className=" bg-gray-200" />
+      <ul className="mt-5 text-white font-base items-center justify-center">
+        <li className="mb-4 rounded hover:shadow hover:bg-sky-100 hover:text-sky-700 py-2">
           <a href="" className="px-3">
             <RiDashboardFill className="inline-block size-6 mr-2 -mt-2" />
             Dashboard
           </a>
         </li>
-        <li className="mb-2 rounded hover:shadow hover:bg-sky-100 py-2">
+        <li className="mb-4 rounded hover:shadow hover:bg-sky-100 hover:text-sky-700 py-2">
             <button className="px-3" onClick={toggleDropdown}>
                 <BsHouseGearFill className="inline-block size-6 mr-2 -mt-2" />
                 Manage Property
@@ -37,7 +39,7 @@ const Sidebar = ({sidebarToggle}) => {
                 <li>
                     <a
                     href=""
-                    className="block text-sm px-4 py-2 text-gray-800 hover:bg-white"
+                    className="block text-sm px-4 py-2 text-white hover:text-sky-700 hover:bg-white"
                     >
                     Add Property
                     </a>
@@ -61,19 +63,19 @@ const Sidebar = ({sidebarToggle}) => {
             </ul>
         </li>
 
-        <li className="mb-2 rounded hover:shadow hover:bg-sky-100 py-2">
+        <li className="mb-4 rounded hover:shadow hover:bg-sky-100 hover:text-sky-700 py-2">
           <a href="" className="px-3">
             <FaClipboardList className="inline-block size-6 mr-2 -mt-2" />
             Property Lists
           </a>
         </li>
-        <li className="mb-2 rounded hover:shadow hover:bg-sky-100 py-2">
+        <li className="mb-4 rounded hover:shadow hover:bg-sky-100 hover:text-sky-700 py-2">
           <a href="" className="px-3">
             <BiSolidMessageDetail className="inline-block size-6 mr-2 -mt-2" />
             Inbox
           </a>
         </li>
-        <li className="mb-2 rounded hover:shadow hover:bg-sky-100 py-2">
+        <li className="mb-4 rounded hover:shadow hover:bg-sky-100 hover:text-sky-700 py-2">
           <a href="" className="px-3">
             <IoMdSettings className="inline-block size-6 mr-2 -mt-2" />
             Settings
