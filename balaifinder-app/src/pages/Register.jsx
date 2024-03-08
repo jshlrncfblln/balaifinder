@@ -99,7 +99,7 @@ export default function Register() {
     return (
         <div className="py-16 bg-gray-200 h-screen justify-center">
             <div className="flex bg-white rounded-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl shadow-xl shadow-sky-600 relative">
-                <div className="hidded lg:block lg:w-1/2 bg-cover bg-[url('./src/assets/Landing-page-2.jpg')]"></div>
+                <div className="hidden lg:block lg:w-1/2 bg-contain bg-no-repeat mt-24 bg-[url('./src/assets/register.svg')]"></div>
                 <Link to="/">
                     <div className="absolute top-0 right-0 m-4 cursor-pointer">
                         <svg className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">

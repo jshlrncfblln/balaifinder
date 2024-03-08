@@ -18,7 +18,7 @@ function Login (){
                         </svg>
                     </div>
                 </Link>
-                <div className="hidded lg:block lg:w-1/2 bg-cover bg-[url('./src/assets/Landing-page-2.jpg')]"></div>
+                <div className="hidded lg:block lg:w-1/2 bg-cover bg-[url('./src/assets/login.svg')]"></div>
                 <div className="w-full p-8 lg:w-1/2">
                     <h2 className="text-2xl font-semibold text-gray-700 text-center">BalaiFinder</h2>
                     <p className="text-xl text-gray-600 text-center">Welcome Back!</p>
