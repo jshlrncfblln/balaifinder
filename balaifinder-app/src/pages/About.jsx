@@ -1,5 +1,8 @@
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
+import { FaFacebook } from "react-icons/fa"
+import { FaInstagram } from "react-icons/fa"
+import { FaGithub } from "react-icons/fa"
 
 
 function About() {
@@ -8,12 +11,13 @@ function About() {
       <section className="bg-gradient-to-b from-white to-blue-400">
         <Navbar />
         <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+          {/*This section is for Project*/}
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
             <div className="order-2 md:order-1">
-              <div className="rounded-full overflow-hidden h-48 w-48 md:h-auto md:w-auto">
+              <div className="flex justify-center md:h-auto md:w-auto">
                 <img
-                  src="./src/assets/AboutIMG/JOSH.jpg"
-                  className="object-cover rounded-full h-50 w-50 mt-8 md:-mt-0"
+                  src="./src/assets/Joshua.jpg"
+                  className="object-cover object-center outline shadow-2xl shadow-sky-600 outline-sky-950 size-96 rounded-full mt-8 md:-mt-0"
                   alt="Person"
                 />
               </div>
@@ -39,9 +43,16 @@ function About() {
                 our projects excel thanks to his leadership, technical
                 proficiency, and unwavering commitment to excellence.
               </p>
+              {/*Social Media Links*/}
+              <div className="mt-8 mb-8 flex justify-center">
+                <a href="https://www.facebook.com/kuyafabi/" className="flex items-center justify-start m-2"><FaFacebook className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+                <a href="" className="flex items-center justify-start m-2"><FaInstagram className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+                <a href="" className="flex items-center justify-start m-2"><FaGithub className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+              </div>
+              <hr class="border-t-2 border-gray-900" />
             </div>
           </div>
-
+          {/*This section is for Associate Software Engineer*/}
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 mt-16">
             <div className="order-2 md:order-1 md:text-right">
               <h1 className="text-3xl font-extrabold text-black sm:text-4xl">
@@ -63,24 +74,31 @@ function About() {
                 innovative solutions. Vince's commitment and expertise are key
                 drivers of our project success.
               </p>
+              {/*Social Media Links*/}
+              <div className="mt-8 mb-8 flex justify-center">
+                <a href="https://www.facebook.com/kuyafabi/" className="flex items-center justify-start m-2"><FaFacebook className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+                <a href="" className="flex items-center justify-start m-2"><FaInstagram className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+                <a href="" className="flex items-center justify-start m-2"><FaGithub className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+              </div>
+              <hr class="border-t-2 border-gray-900" />            
             </div>
             <div className="order-1 md:order-2">
               <div className="rounded-full overflow-hidden h-48 w-48 md:h-auto md:w-auto">
                 <img
-                  src="./src/assets/AboutIMG/SY.jpg"
+                  src="./src/assets/SY.jpg"
                   className="object-cover rounded-full h-50 w-50 mt-8 md:-mt-0"
                   alt="Person"
                 />
               </div>
             </div>
           </div>
-
+          {/*This section is for Lead Back-End*/}
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 mt-16">
             <div className="order-2 md:order-1">
-              <div className="rounded-full overflow-hidden h-48 w-48 md:h-auto md:w-auto">
+              <div className="flex justify-center md:h-auto md:w-auto">
                 <img
-                  src="./src/assets/AboutIMG/PAUL.jpg"
-                  className="object-cover rounded-full h-50 w-50 mt-8 md:-mt-0"
+                  src="./src/assets/Paul.jpg"
+                  className="object-cover object-center outline shadow-2xl shadow-sky-600 outline-sky-950 size-96 rounded-full mt-8 md:-mt-0"
                   alt="Person"
                 />
               </div>
@@ -106,9 +124,16 @@ function About() {
                 dependability. Paul's expertise and unwavering commitment play a
                 vital role in steering the success of our projects.
               </p>
+              {/*Social Media Links*/}
+              <div className="mt-8 mb-8 flex justify-center">
+                <a href="https://www.facebook.com/kuyafabi/" className="flex items-center justify-start m-2"><FaFacebook className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+                <a href="" className="flex items-center justify-start m-2"><FaInstagram className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+                <a href="" className="flex items-center justify-start m-2"><FaGithub className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+              </div>
+              <hr class="border-t-2 border-gray-900" />
             </div>
           </div>
-
+          {/*This section is for Front-End*/}
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 mt-16">
             <div className="order-2 md:order-1 md:text-right">
               <h1 className="text-3xl font-extrabold text-black sm:text-4xl">
@@ -129,6 +154,13 @@ function About() {
                 of innovation. Jumyl's efforts play a pivotal role in providing
                 meaningful digital solutions for our clients.
               </p>
+              {/*Social Media Links*/}
+              <div className="mt-8 mb-8 flex justify-center">
+                <a href="https://www.facebook.com/kuyafabi/" className="flex items-center justify-start m-2"><FaFacebook className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+                <a href="" className="flex items-center justify-start m-2"><FaInstagram className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+                <a href="" className="flex items-center justify-start m-2"><FaGithub className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+              </div>
+              <hr class="border-t-2 border-gray-900" />              
             </div>
             <div className="order-1 md:order-2">
               <div className="rounded-full overflow-hidden h-48 w-48 md:h-auto md:w-auto">
@@ -140,13 +172,13 @@ function About() {
               </div>
             </div>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+          {/*This section is for Front-End*/}
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 mt-16">
             <div className="order-2 md:order-1">
-              <div className="rounded-full overflow-hidden h-48 w-48 md:h-auto md:w-auto">
+              <div className="flex justify-center md:h-auto md:w-auto">
                 <img
-                  src="./src/assets/AboutIMG/CRYSTEL.jpg"
-                  className="object-cover rounded-full h-50 w-50 mt-8 md:-mt-0s"
+                  src="./src/assets/Crystel.jpg"
+                  className="object-cover object-center outline shadow-2xl shadow-sky-600 outline-sky-950 size-96 rounded-full mt-8 md:-mt-0"
                   alt="Person"
                 />
               </div>
@@ -169,9 +201,16 @@ function About() {
                 Crystel's valuable contributions are instrumental in delivering
                 effective and engaging digital solutions for our clients.
               </p>
+              {/*Social Media Links*/}
+              <div className="mt-8 mb-8 flex justify-center">
+                <a href="https://www.facebook.com/imcrysteeel24?mibextid=ZbWKwL" className="flex items-center justify-start m-2"><FaFacebook className="size-10"/><span className="ml-2">Crystel</span></a>
+                <a href="https://www.instagram.com/joyimnida_?igsh=MW00ank5ODN0OWN5YQ==" className="flex items-center justify-start m-2"><FaInstagram className="size-10"/><span className="ml-2">joyimnida</span></a>
+                <a href="https://github.com/imcrysteeel" className="flex items-center justify-start m-2"><FaGithub className="size-10"/><span className="ml-2">imcrysteeel</span></a>
+              </div>
+              <hr class="border-t-2 border-gray-900" />
             </div>
           </div>
-
+          {/*This section is for Back-End*/}
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 mt-16">
             <div className="order-2 md:order-1 md:text-right">
               <h1 className="text-3xl font-extrabold text-black sm:text-4xl">
@@ -192,24 +231,31 @@ function About() {
                 technical expertise are key factors in driving the success of our
                 projects.
               </p>
+              {/*Social Media Links*/}
+              <div className="mt-8 mb-8 flex justify-center">
+                <a href="https://www.facebook.com/kuyafabi/" className="flex items-center justify-start m-2"><FaFacebook className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+                <a href="" className="flex items-center justify-start m-2"><FaInstagram className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+                <a href="" className="flex items-center justify-start m-2"><FaGithub className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+              </div>
+              <hr class="border-t-2 border-gray-900" />
             </div>
             <div className="order-1 md:order-2">
-              <div className="rounded-full overflow-hidden h-48 w-48 md:h-auto md:w-auto">
+              <div className="flex justify-center md:h-auto md:w-auto">
                 <img
-                  src="./src/assets/AboutIMG/LICUP.jpg"
-                  className="object-cover rounded-full h-50 w-50 mt-8 md:-mt-0"
+                  src="./src/assets/Alryan.jpg"
+                  className="object-cover object-center outline shadow-2xl shadow-sky-600 outline-sky-950 size-96 rounded-full mt-8 md:-mt-0"
                   alt="Person"
                 />
               </div>
             </div>
           </div>
-
+          {/*This section is for Technical Writer*/}
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 mt-16">
             <div className="order-2 md:order-1">
-              <div className="rounded-full overflow-hidden h-48 w-48 md:h-auto md:w-auto">
+              <div className="flex justify-center md:h-auto md:w-auto">
                 <img
-                  src="./src/assets/AboutIMG/BOLOY.jpg"
-                  className="object-cover rounded-full h-50 w-50 mt-8 md:-mt-0"
+                  src="./src/assets/Steven.jpg"
+                  className="object-cover object-center outline shadow-2xl shadow-sky-600 outline-sky-950 size-96 rounded-full mt-8 md:-mt-0"
                   alt="Person"
                 />
               </div>
@@ -232,9 +278,16 @@ function About() {
                 communication abilities, Steven plays a central role in delivering
                 exceptional software solutions that surpass expectations.
               </p>
+              {/*Social Media Links*/}
+              <div className="mt-8 mb-8 flex justify-center">
+                <a href="https://www.facebook.com/kuyafabi/" className="flex items-center justify-start m-2"><FaFacebook className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+                <a href="" className="flex items-center justify-start m-2"><FaInstagram className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+                <a href="" className="flex items-center justify-start m-2"><FaGithub className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+              </div>
+              <hr class="border-t-2 border-gray-900" />
             </div>
           </div>
-
+          {/*This section is for Technical Writer*/}
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 mt-16">
             <div className="order-2 md:order-1 md:text-right">
               <h1 className="text-3xl font-extrabold text-black sm:text-4xl">
@@ -253,12 +306,19 @@ function About() {
                 play a vital role in delivering refined software solutions that
                 effectively address user requirements.
               </p>
+              {/*Social Media Links*/}
+              <div className="mt-8 mb-8 flex justify-center">
+                <a href="https://www.facebook.com/kuyafabi/" className="flex items-center justify-start m-2"><FaFacebook className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+                <a href="" className="flex items-center justify-start m-2"><FaInstagram className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+                <a href="" className="flex items-center justify-start m-2"><FaGithub className="size-10"/><span className="ml-2">Joshua Laurence</span></a>
+              </div>
+              <hr class="border-t-2 border-gray-900" />
             </div>
             <div className="order-1 md:order-2">
-              <div className="rounded-full overflow-hidden h-48 w-48 md:h-auto md:w-auto">
+              <div className="flex justify-center md:h-auto md:w-auto">
                 <img
-                  src="./src/assets/AboutIMG/LYKA.jpg"
-                  className="object-cover rounded-full h-50 w-50 mt-8 md:-mt-0"
+                  src="./src/assets/Lyka.jpg"
+                  className="object-cover object-center outline shadow-2xl shadow-sky-600 outline-sky-950 size-96 rounded-full mt-8 md:-mt-0"
                   alt="Person"
                 />
               </div>
