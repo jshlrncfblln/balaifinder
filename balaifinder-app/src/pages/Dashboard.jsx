@@ -8,9 +8,6 @@ export default function Dashboard(){
         <div className="flex h-screen">
             <Sidebar sidebarToggle={sidebarToggle} />
             <RealtorDashboard sidebarToggle={sidebarToggle} setSidebarToggle={setSidebarToggle} />
-            <BrowserRouter>
-            
-            </BrowserRouter>
         </div>
     )
 }
