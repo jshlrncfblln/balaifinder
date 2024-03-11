@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom'
-import { getRegions, getProvinces, getMunicipalities } from 'phil-reg-prov-mun-brgy'
+import regionsData from '../components/json/regions.json';
+import provincesData from '../components/json/provinces.json';
+import municipalitiesData from '../components/json/municipalities.json';
+
 
 
 export default function Register() {
-    const regions = getRegions()
-    const provinces = getProvinces()
-    const municipalities = getMunicipalities()
-
     const [formData, setFormData] = useState({
         first_name: "",
         last_name: "",
@@ -112,6 +111,10 @@ export default function Register() {
         }
     };
 
+    const regions = regionsData;
+    const provinces = provincesData.filter(province => province.reg_code === formData.region);
+    const municipalities = municipalitiesData.filter(municipality => municipality.prov_code === formData.province);
+
     return (
         <div className="py-16 bg-gray-200 h-screen justify-center">
             <div className="flex bg-white rounded-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl shadow-xl shadow-sky-600 relative">
@@ -168,8 +171,9 @@ export default function Register() {
                                 <label className="block text-gray-700 text-sm font-bold mb-2">Region</label>
                                 <select name="region" value={formData.region} onChange={handleChange} className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.region ? 'border-red-500' : formData.region ? 'border-green-500' : ''}`}>
                                     <option value="">Select Region</option>
-                                    <option value="region1">Region 1</option>
-                                    <option value="region2">Region 2</option>
+                                    {regions.map(region => (
+                                        <option key={region.reg_code} value={region.reg_code}>{region.name}</option>
+                                    ))}
                                 </select>
                                 {errors.region && <div className="text-red-600 text-xs">{errors.region}</div>}
                             </div>
@@ -177,8 +181,9 @@ export default function Register() {
                                 <label className="block text-gray-700 text-sm font-bold mb-2">Province</label>
                                 <select name="province" value={formData.province} onChange={handleChange} className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.province ? 'border-red-500' : ''}`}>
                                     <option value="">Select Province</option>
-                                    <option value="province1">Province 1</option>
-                                    <option value="province2">Province 2</option>
+                                    {provinces.map(province => (
+                                        <option key={province.prov_code} value={province.prov_code}>{province.name}</option>
+                                    ))}
                                 </select>
                                 {errors.province && <div className="text-red-600 text-xs">{errors.province}</div>}
                             </div>
@@ -186,8 +191,9 @@ export default function Register() {
                                 <label className="block text-gray-700 text-sm font-bold mb-2">Municipality</label>
                                 <select name="municipality" value={formData.municipality} onChange={handleChange} className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.province ? 'border-red-500' : ''}`}>
                                     <option value="">Select Municipality</option>
-                                    <option value="city1">City 1</option>
-                                    <option value="city2">City 2</option>
+                                    {municipalities.map(municipality => (
+                                        <option key={municipality.mun_code} value={municipality.mun_code}>{municipality.name}</option>
+                                    ))}
                                 </select>
                     {errors.municipality && <div className="text-red-600 text-xs">{errors.municipality}</div>}
                             </div>
