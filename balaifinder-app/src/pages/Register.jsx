@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { Link } from 'react-router-dom'
+import { getRegions, getProvinces, getMunicipalities } from 'phil-reg-prov-mun-brgy'
+
 
 export default function Register() {
+    const regions = getRegions()
+    const provinces = getProvinces()
+    const municipalities = getMunicipalities()
+
     const [formData, setFormData] = useState({
         first_name: "",
         last_name: "",
@@ -29,10 +35,6 @@ export default function Register() {
                 newErrors.last_name = "Last Name is required";
                 valid = false;
             }
-            if (!formData.email) {
-                newErrors.email = "Email is required";
-                valid = false;
-            }
         } else if (step === 2) {
             if (!formData.address) {
                 newErrors.address = "Address is required";
@@ -51,11 +53,18 @@ export default function Register() {
                 valid = false;
             }
         } else if (step === 3) {
+            if (!formData.email) {
+                newErrors.email = "Email is required";
+                valid = false;
+            }
             if (!formData.password) {
                 newErrors.password = "Password is required";
                 valid = false;
-            } else if (formData.password.trim().length < 6) {
-                newErrors.password = "Password must be at least 6 characters";
+            } else if (
+                !/(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}/.test(formData.password)
+            ) {
+                newErrors.password =
+                    "Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and be at least 6 characters long";
                 valid = false;
             }
             if (formData.confirm_password.trim() !== formData.password.trim()) {
@@ -70,13 +79,20 @@ export default function Register() {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        const newErrors = {...errors}
-        delete newErrors[name]
-        setErrors(newErrors)
-        setFormData({
+        const newFormData = {
             ...formData,
             [name]: value
-        });
+        }
+
+        const newErrors = {
+            ...errors,
+            [name]: undefined // this will remove the errors for the input fields
+        }
+
+
+        setFormData(newFormData)
+        setErrors(newErrors)
+        console.log(errors)
     };
 
     const handleSubmit = (e) => {
@@ -109,17 +125,19 @@ export default function Register() {
                 </Link>
                 <form onSubmit={handleSubmit} className="w-full p-8 lg:w-1/2">
                     <h2 className="text-2xl font-semibold text-gray-700 text-center">BalaiFinder</h2>
+
+                    {/** this is for the step 1 process */}
                     {step === 1 && (
                         <>
                             <p className="text-xl text-gray-600 text-center">Step 1: Personal Information</p>
                             <div className="mt-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2">First Name</label>
-                                <input type="text" value={formData.first_name} onChange={handleChange} name="first_name" className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.first_name ? 'border-red-600' : ''}`} />
+                                <input type="text" value={formData.first_name} onChange={handleChange} name="first_name" className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.first_name ? 'border-red-600' : formData.first_name ? 'border-green-500' : ''}`} />
                                 {errors.first_name && <div className="text-red-600 text-xs">{errors.first_name}</div>}
                             </div>
                             <div className="mt-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2">Last Name</label>
-                                <input type="text" name="last_name" className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.last_name ? 'border-red-500' : ''}`} value={formData.last_name} onChange={handleChange} />
+                                <input type="text" name="last_name" className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.last_name ? 'border-red-500' : formData.last_name ? 'border-green-500' : ''}`} value={formData.last_name} onChange={handleChange} />
                                 {errors.last_name && <div className="text-red-600 text-xs">{errors.last_name}</div>}
                             </div>
                             <div className="mt-4">
@@ -130,9 +148,8 @@ export default function Register() {
                                 <label className="block text-gray-700 text-sm font-bold mb-2">Gender</label>
                                 <select name="gender" className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none `}>
                                     <option value="">Select Gender</option>
-                                    <option value="address1">Male</option>
-                                    <option value="address2">Female</option>
-                                    <option value="address2">Prefer not to say</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
                                 </select>
                             </div>
                         </>
@@ -143,37 +160,34 @@ export default function Register() {
                             <p className="text-xl text-gray-600 text-center">Step 2: Address Information</p>
                             <div className="mt-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2">Residential Address</label>
-                                <input name="address" value={formData.address} onChange={handleChange} className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.address ? 'border-red-500' : ''}`}>
-                                    <option value="">Select Address</option>
-                                    <option value="address1">Address 1</option>
-                                    <option value="address2">Address 2</option>
+                                <input name="address" type="text" value={formData.address} onChange={handleChange} className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.address ? 'border-red-500' : formData.address ? 'border-green-500' : ''}`}>
                                 </input>
                                 {errors.address && <div className="text-red-600 text-xs">{errors.address}</div>}
                             </div>
                             <div className="mt-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2">Region</label>
-                                <select name="region" value={formData.region} onChange={handleChange} className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.region ? 'border-red-500' : ''}`}>
+                                <select name="region" value={formData.region} onChange={handleChange} className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.region ? 'border-red-500' : formData.region ? 'border-green-500' : ''}`}>
                                     <option value="">Select Region</option>
-                                    <option value="address1">Region 1</option>
-                                    <option value="address2">Region 2</option>
+                                    <option value="region1">Region 1</option>
+                                    <option value="region2">Region 2</option>
                                 </select>
                                 {errors.region && <div className="text-red-600 text-xs">{errors.region}</div>}
                             </div>
                             <div className="mt-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2">Province</label>
-                                <select name="region" value={formData.province} onChange={handleChange} className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.province ? 'border-red-500' : ''}`}>
+                                <select name="province" value={formData.province} onChange={handleChange} className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.province ? 'border-red-500' : ''}`}>
                                     <option value="">Select Province</option>
-                                    <option value="address1">Province 1</option>
-                                    <option value="address2">Province 2</option>
+                                    <option value="province1">Province 1</option>
+                                    <option value="province2">Province 2</option>
                                 </select>
                                 {errors.province && <div className="text-red-600 text-xs">{errors.province}</div>}
                             </div>
                             <div className="mt-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2">Municipality</label>
-                                <select name="region" value={formData.municipality} onChange={handleChange} className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.province ? 'border-red-500' : ''}`}>
+                                <select name="municipality" value={formData.municipality} onChange={handleChange} className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.province ? 'border-red-500' : ''}`}>
                                     <option value="">Select Municipality</option>
-                                    <option value="address1">City 1</option>
-                                    <option value="address2">City 2</option>
+                                    <option value="city1">City 1</option>
+                                    <option value="city2">City 2</option>
                                 </select>
                     {errors.municipality && <div className="text-red-600 text-xs">{errors.municipality}</div>}
                             </div>
@@ -183,6 +197,11 @@ export default function Register() {
                     {step === 3 && (
                         <>
                             <p className="text-xl text-gray-600 text-center">Step 3: Account Creation</p>
+                            <div className="mt-4">
+                                <label className="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
+                                <input name="email" type="email" className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.email ? 'border-red-500' : ''}`} value={formData.email} onChange={handleChange} />
+                                {errors.email && <div className="text-red-600 text-xs">{errors.email}</div>}
+                            </div>
                             <div className="mt-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2">Create Password</label>
                                 <input name="password" type="password" className={`bg-gray-200 text-gray-700 focus:outline-sky-600 focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none ${errors.password ? 'border-red-500' : ''}`} value={formData.password} onChange={handleChange} />
