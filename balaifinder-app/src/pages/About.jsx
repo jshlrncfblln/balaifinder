@@ -91,7 +91,7 @@ function About() {
             <div className="order-1 md:order-2">
               <div className="rounded-full overflow-hidden h-48 w-48 md:h-auto md:w-auto">
                 <img
-                  src="./src/assets/SY.jpg"
+                  src="./src/assets/profile.jpg"
                   className="object-cover rounded-full h-50 w-50 mt-8 md:-mt-0"
                   alt="Person"
                 />
@@ -171,7 +171,7 @@ function About() {
             <div className="order-1 md:order-2">
               <div className="rounded-full overflow-hidden h-48 w-48 md:h-auto md:w-auto">
                 <img
-                  src="./src/assets/AboutIMG/REYES.png"
+                  src="./src/assets/profile.jpg"
                   className="object-cover rounded-full h-50 w-50 mt-8 md:-mt-0"
                   alt="Person"
                 />
