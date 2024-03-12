@@ -11,6 +11,12 @@ function About() {
       <section className="bg-gradient-to-b from-white to-blue-400">
         <Navbar />
         <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+          <div className="mb-24 text-center">
+              <h1 className="text-3xl font-extrabold text-black sm:text-4xl">
+                  Meet the Developers of BalaiFinders
+              </h1>
+              <p className="text-sky-700 text-xl font-semibold mt-2">Introducing the Syntax Finders</p>
+          </div>
           {/*This section is for Project*/}
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
             <div className="order-2 md:order-1">
