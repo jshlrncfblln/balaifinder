@@ -9,6 +9,7 @@ import Maintenance from './pages/Maintenance'
 import Login from './pages/Login'
 import Navbar from './components/Navbar'
 import Register from './pages/Register'
+import ProductPage from './pages/ProductPage'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/matching" element={<Maintenance />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path='/prodpage' element={<ProductPage/>}></Route>
         </Routes>
     </div>
   )
