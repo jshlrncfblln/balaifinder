@@ -11,6 +11,7 @@ import Navbar from './components/Navbar'
 import Register from './pages/Register'
 import ProductPage from './pages/ProductPage'
 
+
 function App() {
   return (
     <div className='App'>
@@ -22,6 +23,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path='/prodpage' element={<ProductPage/>}></Route>
+           
         </Routes>
     </div>
   )
